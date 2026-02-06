@@ -1,0 +1,83 @@
+# IBKR Configuration Example
+# Copy this file to config.yaml and fill in your credentials
+
+ibkr:
+  # TWS or IB Gateway connection
+  host: '127.0.0.1'
+  port: 7497  # 7497 for TWS paper, 7496 for TWS live, 4002 for IB Gateway paper, 4001 for IB Gateway live
+  client_id: 1
+  
+  # Account settings
+  account_id: 'YOUR_ACCOUNT_ID'
+  
+trading:
+  # Position sizing
+  max_position_size: 10000  # Maximum USD per position
+  max_portfolio_risk: 0.02  # Maximum 2% portfolio risk per trade
+  
+  # Risk management
+  max_daily_loss: 1000  # Maximum daily loss in USD
+  max_open_positions: 5
+  
+  # Order settings
+  order_type: 'LIMIT'  # LIMIT, MARKET, STOP
+  time_in_force: 'DAY'  # DAY, GTC, IOC, GTD
+  
+data:
+  # Data storage
+  database_url: 'postgresql://user:password@localhost:5432/trading_db'
+  data_dir: 'data/'
+  
+  # Data fetching
+  symbols:
+    - 'AAPL'
+    - 'MSFT'
+    - 'GOOGL'
+    - 'TSLA'
+  
+  timeframes:
+    - '1min'
+    - '5min'
+    - '1hour'
+    - '1day'
+
+models:
+  # Model training
+  train_test_split: 0.8
+  validation_split: 0.1
+  
+  # Feature engineering
+  technical_indicators:
+    - 'SMA_20'
+    - 'SMA_50'
+    - 'RSI_14'
+    - 'MACD'
+    - 'BB_20'
+    - 'ATR_14'
+  
+  # Model parameters
+  random_forest:
+    n_estimators: 100
+    max_depth: 10
+  
+  xgboost:
+    n_estimators: 200
+    learning_rate: 0.01
+    max_depth: 6
+  
+  lstm:
+    units: 64
+    dropout: 0.2
+    epochs: 100
+    batch_size: 32
+
+backtest:
+  # Backtesting parameters
+  initial_capital: 100000
+  commission: 0.001  # 0.1% per trade
+  slippage: 0.0005  # 0.05%
+  
+logging:
+  level: 'INFO'  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  log_dir: 'logs/'
+  log_file: 'trading.log'
