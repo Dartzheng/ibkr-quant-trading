@@ -1,0 +1,55 @@
+# IBKR API
+ibapi==9.81.1.post1
+ib-insync==0.9.86
+
+# Data handling
+pandas==2.1.4
+numpy==1.26.2
+pyarrow==14.0.1
+
+# Machine Learning
+scikit-learn==1.3.2
+xgboost==2.0.3
+lightgbm==4.1.0
+tensorflow==2.15.0
+torch==2.1.2
+
+# Technical Analysis
+ta-lib==0.4.28
+pandas-ta==0.3.14b0
+
+# Backtesting
+backtrader==1.9.78.123
+vectorbt==0.26.2
+
+# Visualization
+matplotlib==3.8.2
+seaborn==0.13.0
+plotly==5.18.0
+
+# Database
+sqlalchemy==2.0.23
+psycopg2-binary==2.9.9
+
+# Configuration
+pyyaml==6.0.1
+python-dotenv==1.0.0
+
+# Utilities
+joblib==1.3.2
+tqdm==4.66.1
+requests==2.31.0
+
+# Testing
+pytest==7.4.3
+pytest-cov==4.1.0
+
+# Logging
+loguru==0.7.2
+
+# API
+fastapi==0.108.0
+uvicorn==0.25.0
+
+# Scheduling
+apscheduler==3.10.4
